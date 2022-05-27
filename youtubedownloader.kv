@@ -1,0 +1,69 @@
+Interface:
+
+<Interface>:
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        padding: 100, 0, 100, 0
+        spacing: "20dp"
+        canvas.before:
+            Color:
+                rgba: .2, .2, .2, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: ""
+            size_hint: (1, 1)
+        BoxLayout:
+            orientation: "horizontal"
+            pos_hint: {"center_x": .5}
+            size_hint: (None, None)
+            height: "50dp"
+            width: "260dp"
+
+            TextInput:
+                pos_hint: {"center_x": .5}
+                id: text_input_url
+                multiline: False
+                hint_text: "Youtube URL"
+                size_hint: (None, None)
+                width: "200dp"
+                height: "30dp"
+            Button:
+                id: button_format
+                text: "MP4"
+                pos_hint: {"center_x": .5}
+                size_hint: (None, None)
+                height: "30dp"
+                width: "60dp"
+                on_press: root.on_button_format()
+        
+        TextInput:
+            pos_hint: {"center_x": .5}
+            id: text_input_path
+            multiline: False
+            text: "C:/YoutubeDownloader"
+            size_hint: (None, None)
+            width: "260dp"
+            height: "30dp"
+
+        Label:
+            id: status
+            color: 1,1,1,1
+            text: "Please enter an url"
+            size_hint: 1, None
+            size_hint: (1, 0.1)           
+        Button:
+            id: submit_button
+            text: "download"
+            pos_hint: {"center_x": .5}
+            size_hint: (None, None)
+            height: "60dp"
+            width: "120dp"
+            on_press: root.on_button_submit()
+        Label:
+            text: ""
+            size_hint: (1, 1)
+        
+
